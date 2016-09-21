@@ -1,28 +1,23 @@
 <html ng-app="clockApp">
     <head>
         <title>Clock App</title> 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="app.js"></script>
     </head>
-<body>
-    <h1>Clock App</h1>
+    
+    <body>
+        <h1>Clock App</h1>
 
-    <div ng-controller="TimeCtrl">
-        <h1>
-        The Current time is: <p>{{timeString}}</p>
-        </h1>
-         
-    </div>
+        <div ng-controller="TimeCtrl">
+            <h1>
+                Please enter your name:<input ng-model="userName" type="text"></input>
+            </h1>
+            <h1>The Current time is: </h1><p>{{timeString}}</p>
+            
+        <p>Your name is {{userName}}</p>
+            <button ng-click="UpdateTime()">Update Time</button>
+        </div>
     
-    <script>
-    var app = angular.module("clockApp",[]);
-    app.controller("TimeCtrl",TimeCtrl)
+    </body>
     
-    function TimeCtrl($scope){
-    var currentDate = new Date();
-    $scope.timeString = currentDate.toTimeString();
-    
-    }
-    </script>
-    
-</body>
 </html>
