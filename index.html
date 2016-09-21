@@ -1,0 +1,28 @@
+<html ng-app="clockApp">
+    <head>
+        <title>Clock App</title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    </head>
+<body>
+    <h1>Clock App</h1>
+
+    <div ng-controller="TimeCtrl">
+        <h1>
+        The Current time is: <p>{{timeString}}</p>
+        </h1>
+         
+    </div>
+    
+    <script>
+    var app = angular.module("clockApp",[]);
+    app.controller("TimeCtrl",TimeCtrl)
+    
+    function TimeCtrl($scope){
+    var currentDate = new Date();
+    $scope.timeString = currentDate.toTimeString();
+    
+    }
+    </script>
+    
+</body>
+</html>
